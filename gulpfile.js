@@ -22,6 +22,12 @@ function sass() {
     .pipe(browserSync.stream());
 };
 
+function js() {
+  return gulp.src(['node_modules/jquery/dist/*.*', 'node_modules/what-input/dist/**/*.*', 'node_modules/foundation-sites/dist/js/**/*.*'], {base:'node_modules'})
+    .pipe(gulp.dest("js"))
+    .pipe(browserSync.stream());
+};
+
 function serve() {
   browserSync.init({
     server: "./"
@@ -32,5 +38,7 @@ function serve() {
 }
 
 gulp.task('sass', sass);
+gulp.task('js', js);
 gulp.task('serve', gulp.series('sass', serve));
+gulp.task('build', gulp.series('js', 'sass', serve));
 gulp.task('default', gulp.series('sass', serve));
