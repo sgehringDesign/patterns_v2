@@ -204,8 +204,9 @@
             background: #292929!important;
           }
 
-          @include breakpoint(large) {
-            a {
+         
+          a {
+            @include breakpoint(large) {
               position: relative;
               z-index: 2;
               top: 1px;
@@ -215,6 +216,12 @@
               
               &::after {
                 margin-top: -4px;
+              }
+            }
+            
+            @include breakpoint(medium down) {
+              &:hover {
+                background: #3e3e3e!important;
               }
             }
           }
