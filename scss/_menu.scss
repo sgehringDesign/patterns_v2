@@ -135,19 +135,22 @@
           }
 
           ul.is-dropdown-submenu {
+
             @include breakpoint(large) { 
                border:1px solid #e0dfe0;
                background: #fff;
                left: -1px;
             }
+
             @include breakpoint(medium down) { 
-              display: block!important;
+              //display: block!important;
               width:100%;
               position: static!important;
               background: none;
+              background: #292929!important;
               border: none;
             }
-  
+
             li {
               border: none;
               
@@ -175,6 +178,11 @@
                     background: #1369d0!important;
                     color:#fff;
                   }
+
+                  @include breakpoint(medium down) {
+                    background: #3e3e3e!important;
+                  }
+
                 }
 
               }
@@ -184,14 +192,19 @@
 
         }
 
+        &.is-active {
 
-        @include breakpoint(large) {
-          
-          &.is-active {
+          @include breakpoint(large) {
             background: #fff;
             border-left:1px solid #e0dfe0;
             border-right:1px solid #e0dfe0;
-            
+          }
+
+          @include breakpoint(medium down) {
+            background: #292929!important;
+          }
+
+          @include breakpoint(large) {
             a {
               position: relative;
               z-index: 2;
@@ -205,8 +218,8 @@
               }
             }
           }
-        }
 
+        }
 
       }
     }
