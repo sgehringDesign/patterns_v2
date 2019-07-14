@@ -26,6 +26,7 @@
     }
   }
 
+  #column-menu-mega,
   #column-menu {
     @include breakpoint(large) {
       visibility: visible!important;
@@ -66,7 +67,6 @@
 
       li {
         display: block!important;
-
         @include breakpoint(medium down) { 
           width:100%!important;
           position: static!important;
@@ -74,7 +74,6 @@
           margin:0;
           background: none;
         }
-
         @include breakpoint(large) { 
           border-left:1px solid #f1f0f1;
           border-right:1px solid #f1f0f1;
@@ -135,13 +134,11 @@
           }
 
           ul.is-dropdown-submenu {
-
             @include breakpoint(large) { 
                border:1px solid #e0dfe0;
                background: #fff;
                left: -1px;
             }
-
             @include breakpoint(medium down) { 
               //display: block!important;
               width:100%;
@@ -160,7 +157,6 @@
                   border:none;
                   position:static;
                 }
-
                 @include breakpoint(medium down) {
                   color:#fff;                  
                 }
@@ -178,7 +174,6 @@
                     background: #1369d0!important;
                     color:#fff;
                   }
-
                   @include breakpoint(medium down) {
                     background: #3e3e3e!important;
                   }
@@ -193,18 +188,15 @@
         }
 
         &.is-active {
-
           @include breakpoint(large) {
             background: #fff;
             border-left:1px solid #e0dfe0;
             border-right:1px solid #e0dfe0;
           }
-
           @include breakpoint(medium down) {
             background: #292929!important;
           }
 
-         
           a {
             @include breakpoint(large) {
               position: relative;
@@ -218,7 +210,6 @@
                 margin-top: -4px;
               }
             }
-            
             @include breakpoint(medium down) {
               &:hover {
                 background: #3e3e3e!important;
@@ -231,5 +222,44 @@
       }
     }
 
+  }
+
+  #column-menu-mega {
+    ul.menu {
+      position: static;
+      //#f8f8f8
+      
+      li {
+        .hover {
+          background: #f8f8f8!important;
+        }
+      }
+      
+      .dropdown-pane {
+        width: 100% !important;
+        max-width: 100%;
+        margin: 0 auto !important;
+        left: 0% !important;
+        right: 0% !important;
+        background: #f8f8f8!important;
+        border: none;
+
+        ul.menu {
+          background: none;
+          border: none;
+          
+          li {
+            border: none;
+            
+            a {
+               border: none;
+            }
+            
+            
+          }
+        }
+
+      }
+    }
   }
 }
