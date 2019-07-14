@@ -226,36 +226,54 @@
 
   #column-menu-mega {
     ul.menu {
-      position: static;
-      //#f8f8f8
+      @include breakpoint(large up) {
+        position: static;
+      }
       
       li {
         .hover {
-          background: #f8f8f8!important;
+          @include breakpoint(large up) {
+            background: #f8f8f8!important;
+          }
         }
       }
       
       .dropdown-pane {
-        width: 100% !important;
-        max-width: 100%;
-        margin: 0 auto !important;
-        left: 0% !important;
-        right: 0% !important;
-        background: #f8f8f8!important;
-        border: none;
+
+        @include breakpoint(large up) {
+          width: 100% !important;
+          max-width: 100%;
+          margin: 0 auto !important;
+          left: 0% !important;
+          right: 0% !important;
+          background: #f8f8f8!important;
+          border: none;
+        }
+        @include breakpoint(medium down) {
+          background:none;
+          border: none;
+          position: static;
+          margin: 0;
+          padding: 0;
+        }
 
         ul.menu {
-          background: none;
-          border: none;
-          
-          li {
+          @include breakpoint(large up) {
+            background: none;
             border: none;
-            
-            a {
-               border: none;
+          }
+
+          li {
+            @include breakpoint(large up) {
+              border: none;
             }
-            
-            
+
+            a {
+              @include breakpoint(large up) {
+                border: none;
+              }
+            }
+
           }
         }
 
@@ -263,3 +281,5 @@
     }
   }
 }
+
+
